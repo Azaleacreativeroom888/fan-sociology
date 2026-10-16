@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>社会のふしぎノート | 社会学の勉強サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --neon: #c6ff00;
+    --neon-soft: #e6ff7a;
+    --ink: #1d2200;
+    --paper: #fbfff0;
+    --muted: #55603a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.8;
+  }
+  a { color: inherit; }
+  a:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+  /* header */
+  header { background: var(--neon); border-bottom: 3px solid var(--ink); }
+  .bar {
+    max-width: 1040px; margin: 0 auto; padding: 14px 20px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+  }
+  .logo { font-weight: 900; font-size: 1.15rem; text-decoration: none; }
+  nav { display: flex; gap: 6px; flex-wrap: wrap; }
+  nav a {
+    text-decoration: none; font-weight: 700; font-size: .95rem;
+    padding: 4px 14px; border-radius: 999px; border: 2px solid transparent;
+  }
+  nav a:hover, nav a[aria-current="page"] { border-color: var(--ink); background: var(--paper); }
+
+  /* hero */
+  .hero { background: var(--neon); border-bottom: 3px solid var(--ink); }
+  .hero-inner {
+    max-width: 1040px; margin: 0 auto; padding: 56px 20px 64px;
+    display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center;
+  }
+  .hero h1 { font-size: clamp(2.1rem, 5.6vw, 3.8rem); line-height: 1.25; font-weight: 900; letter-spacing: .02em; }
+  .hero p { margin-top: 20px; max-width: 30em; font-weight: 500; }
+  .hero .go {
+    display: inline-block; margin-top: 26px; padding: 10px 24px; font-weight: 700;
+    background: var(--ink); color: var(--neon); text-decoration: none; border-radius: 999px;
+  }
+  .hero .go:hover { background: var(--paper); color: var(--ink); outline: 2px solid var(--ink); }
+  .net { width: 100%; height: auto; }
+  .net line { stroke: var(--ink); stroke-width: 2; }
+  .net circle { fill: var(--paper); stroke: var(--ink); stroke-width: 3; }
+  .net .me { fill: var(--ink); }
+
+  /* sections */
+  main section { max-width: 1040px; margin: 0 auto; padding: 56px 20px 0; }
+  main section:last-of-type { padding-bottom: 64px; }
+  h2 { font-size: 1.6rem; font-weight: 900; display: inline-block; background: linear-gradient(transparent 60%, var(--neon) 60%); }
+  .lead { margin-top: 8px; color: var(--muted); }
+  .more { display: inline-block; margin-top: 18px; font-weight: 700; }
+
+  /* blog preview: tweet style */
+  .tweets { margin-top: 22px; border: 2px solid var(--ink); border-radius: 16px; background: #fff; overflow: hidden; }
+  .tweet { display: flex; gap: 14px; padding: 16px 18px; }
+  .tweet + .tweet { border-top: 2px solid var(--neon-soft); }
+  .avatar { flex: none; width: 42px; height: 42px; border-radius: 50%; background: var(--neon); border: 2px solid var(--ink); }
+  .tweet time { display: block; font-size: .85rem; color: var(--muted); font-weight: 500; }
+
+  /* column cards */
+  .cols { margin-top: 22px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .col { border: 2px solid var(--ink); border-radius: 4px 18px 4px 18px; background: #fff; padding: 20px; }
+  .col:nth-child(2) { background: var(--neon-soft); }
+  .col b { display: block; font-size: 1.05rem; line-height: 1.5; margin-bottom: 6px; }
+  .col span { font-size: .85rem; color: var(--muted); font-weight: 700; }
+
+  /* keywords */
+  .words { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; list-style: none; }
+  .words li { border: 2px solid var(--ink); border-radius: 999px; padding: 4px 16px; font-weight: 700; background: #fff; }
+  .words li:nth-child(3n) { background: var(--neon); }
+
+  footer { background: var(--ink); color: var(--neon); text-align: center; padding: 22px 20px; font-size: .9rem; }
+
+  @media (max-width: 760px) {
+    .hero-inner { grid-template-columns: 1fr; padding: 40px 20px 48px; }
+    .net { max-width: 320px; margin: 0 auto; }
+    .cols { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html">社会のふしぎノート</a>
+    <nav aria-label="メインメニュー">
+      <a href="index.html" aria-current="page">ホーム</a>
+      <a href="blog.html">ブログ</a>
+      <a href="column.html">コラム</a>
+      <a href="about.html">このサイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>あたりまえを、<br>ちょっと疑ってみる。</h1>
+      <p>社会学を勉強中の学生による、学びの記録サイトです。毎日の進捗、マンガやイラスト、小さな論考をここにためていきます。</p>
+      <a class="go" href="blog.html">勉強の記録を見る</a>
+    </div>
+    <svg class="net" viewBox="0 0 300 280" role="img" aria-label="人と人がつながる図">
+      <g>
+        <line x1="60" y1="60" x2="150" y2="110"/><line x1="150" y1="110" x2="245" y2="55"/>
+        <line x1="150" y1="110" x2="120" y2="200"/><line x1="150" y1="110" x2="230" y2="170"/>
+        <line x1="120" y1="200" x2="50" y2="230"/><line x1="120" y1="200" x2="200" y2="245"/>
+        <line x1="230" y1="170" x2="200" y2="245"/><line x1="60" y1="60" x2="40" y2="140"/>
+        <line x1="40" y1="140" x2="120" y2="200"/>
+      </g>
+      <circle cx="60" cy="60" r="16"/><circle cx="245" cy="55" r="14"/>
+      <circle cx="40" cy="140" r="12"/><circle cx="230" cy="170" r="18"/>
+      <circle cx="120" cy="200" r="15"/><circle cx="50" cy="230" r="11"/>
+      <circle cx="200" cy="245" r="13"/>
+      <circle class="me" cx="150" cy="110" r="26"/>
+    </svg>
+  </div>
+</div>
+
+<main>
+  <section aria-labelledby="blog-h">
+    <h2 id="blog-h">最近の勉強ログ</h2>
+    <p class="lead">日付とひとことだけの進捗メモです。</p>
+    <div class="tweets">
+      <div class="tweet"><div class="avatar"></div><div><time datetime="2026-10-16">2026.10.16</time>デュルケームの『自殺論』第1章を読んだ。個人の悩みに見えることを、社会の数字で見る発想がおもしろい。</div></div>
+      <div class="tweet"><div class="avatar"></div><div><time datetime="2026-10-15">2026.10.15</time>ウェーバーの「理念型」がまだ腑に落ちない。明日もう一度ノートを見直す。</div></div>
+      <div class="tweet"><div class="avatar"></div><div><time datetime="2026-10-14">2026.10.14</time>ゴッフマンの「日常生活における自己呈示」を読み始めた。コンビニ店員の「いらっしゃいませ」も演技かもしれない。</div></div>
+    </div>
+    <a class="more" href="blog.html">ブログをもっと見る</a>
+  </section>
+
+  <section aria-labelledby="col-h">
+    <h2 id="col-h">コラム</h2>
+    <p class="lead">マンガ、イラスト、4コマ、そして軽めの小論文。</p>
+    <div class="cols">
+      <article class="col"><b>4コマ「満員電車の暗黙のルール」</b><span>4コマ</span></article>
+      <article class="col"><b>「ふつう」はだれが決めているのか</b><span>小論文</span></article>
+      <article class="col"><b>社会学者たちのゆるいイラスト図鑑</b><span>イラスト</span></article>
+    </div>
+    <a class="more" href="column.html">コラムをもっと見る</a>
+  </section>
+
+  <section aria-labelledby="kw-h">
+    <h2 id="kw-h">いま勉強しているキーワード</h2>
+    <ul class="words">
+      <li>アノミー</li><li>理念型</li><li>役割</li><li>社会的構築</li>
+      <li>ジェンダー</li><li>家族</li><li>格差</li><li>メディア</li><li>相互行為</li>
+    </ul>
+  </section>
+</main>
+
+<footer>&copy; 2026 社会のふしぎノート</footer>
+
+</body>
+</html>
