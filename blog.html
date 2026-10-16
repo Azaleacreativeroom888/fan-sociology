@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ブログ | 社会のふしぎノート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --neon: #c6ff00;
+    --neon-soft: #e6ff7a;
+    --ink: #1d2200;
+    --paper: #fbfff0;
+    --muted: #55603a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.8;
+  }
+  a { color: inherit; }
+  a:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+  header { background: var(--neon); border-bottom: 3px solid var(--ink); }
+  .bar {
+    max-width: 1040px; margin: 0 auto; padding: 14px 20px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+  }
+  .logo { font-weight: 900; font-size: 1.15rem; text-decoration: none; }
+  nav { display: flex; gap: 6px; flex-wrap: wrap; }
+  nav a {
+    text-decoration: none; font-weight: 700; font-size: .95rem;
+    padding: 4px 14px; border-radius: 999px; border: 2px solid transparent;
+  }
+  nav a:hover, nav a[aria-current="page"] { border-color: var(--ink); background: var(--paper); }
+
+  .title { background: var(--neon); border-bottom: 3px solid var(--ink); }
+  .title div { max-width: 720px; margin: 0 auto; padding: 36px 20px 40px; }
+  .title h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; }
+  .title p { margin-top: 8px; font-weight: 500; }
+
+  main { max-width: 720px; margin: 0 auto; padding: 36px 20px 64px; }
+  .tweets { border: 2px solid var(--ink); border-radius: 16px; background: #fff; overflow: hidden; }
+  .tweet { display: flex; gap: 14px; padding: 18px 20px; }
+  .tweet + .tweet { border-top: 2px solid var(--neon-soft); }
+  .avatar { flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--neon); border: 2px solid var(--ink); }
+  .tweet time { display: block; font-size: .85rem; color: var(--muted); font-weight: 700; }
+  .tweet p { margin-top: 2px; }
+
+  footer { background: var(--ink); color: var(--neon); text-align: center; padding: 22px 20px; font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html">社会のふしぎノート</a>
+    <nav aria-label="メインメニュー">
+      <a href="index.html">ホーム</a>
+      <a href="blog.html" aria-current="page">ブログ</a>
+      <a href="column.html">コラム</a>
+      <a href="about.html">このサイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<div class="title">
+  <div>
+    <h1>勉強ログ</h1>
+    <p>社会学の勉強の進み具合を、日付とひとことで記録しています。</p>
+  </div>
+</div>
+
+<main>
+  <div class="tweets">
+    <article class="tweet"><div class="avatar"></div><div><time datetime="2026-10-16">2026.10.16</time><p>デュルケームの『自殺論』第1章を読んだ。個人の悩みに見えることを、社会の数字で見る発想がおもしろい。</p></div></article>
+    <article class="tweet"><div class="avatar"></div><div><time datetime="2026-10-15">2026.10.15</time><p>ウェーバーの「理念型」がまだ腑に落ちない。明日もう一度ノートを見直す。</p></div></article>
+    <article class="tweet"><div class="avatar"></div><div><time datetime="2026-10-14">2026.10.14</time><p>ゴッフマンの『日常生活における自己呈示』を読み始めた。コンビニ店員の「いらっしゃいませ」も演技かもしれない。</p></div></article>
+    <article class="tweet"><div class="avatar"></div><div><time datetime="2026-10-12">2026.10.12</time><p>「役割」の概念をノートにまとめた。自分も家では娘、教室では学生で、場面ごとに話し方が違う。</p></div></article>
+    <article class="tweet"><div class="avatar"></div><div><time datetime="2026-10-10">2026.10.10</time><p>社会的構築という考え方を勉強。「ふつう」や「常識」は、最初からあったものではなく、人が作ってきたものなんだ。</p></div></article>
+    <article class="tweet"><div class="avatar"></div><div><time datetime="2026-10-08">2026.10.08</time><p>入門書を1冊読み終えた。次はジェンダーと家族の章を、ゆっくり読み直したい。</p></div></article>
+    <article class="tweet"><div class="avatar"></div><div><time datetime="2026-10-05">2026.10.05</time><p>社会学の勉強サイトを作り始めた。今日はキーワードを10個ならべただけ。少しずつ増やしていく。</p></div></article>
+  </div>
+</main>
+
+<footer>&copy; 2026 社会のふしぎノート</footer>
+
+</body>
+</html>
