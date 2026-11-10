@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>このサイトについて | 社会のふしぎノート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --neon: #c6ff00;
+    --neon-soft: #e6ff7a;
+    --ink: #1d2200;
+    --paper: #fbfff0;
+    --muted: #55603a;
+    --error: #b3173b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.8;
+  }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+  header { background: var(--neon); border-bottom: 3px solid var(--ink); }
+  .bar {
+    max-width: 1040px; margin: 0 auto; padding: 14px 20px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+  }
+  .logo { font-weight: 900; font-size: 1.15rem; text-decoration: none; }
+  nav { display: flex; gap: 6px; flex-wrap: wrap; }
+  nav a {
+    text-decoration: none; font-weight: 700; font-size: .95rem;
+    padding: 4px 14px; border-radius: 999px; border: 2px solid transparent;
+  }
+  nav a:hover, nav a[aria-current="page"] { border-color: var(--ink); background: var(--paper); }
+
+  .title { background: var(--neon); border-bottom: 3px solid var(--ink); }
+  .title div { max-width: 1040px; margin: 0 auto; padding: 36px 20px 40px; }
+  .title h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; }
+  .title p { margin-top: 8px; font-weight: 500; }
+
+  main { max-width: 1040px; margin: 0 auto; padding: 0 20px 64px; }
+  section { padding-top: 52px; }
+  h2 { font-size: 1.5rem; font-weight: 900; display: inline-block; background: linear-gradient(transparent 60%, var(--neon) 60%); }
+  .lead { margin-top: 6px; color: var(--muted); }
+  .intro { margin-top: 14px; max-width: 40em; }
+
+  /* links */
+  .links { margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .link {
+    display: flex; align-items: center; gap: 14px; text-decoration: none;
+    border: 2px solid var(--ink); border-radius: 4px 18px 4px 18px; background: #fff; padding: 14px 16px;
+  }
+  .link:hover { background: var(--neon-soft); }
+  .link .ico {
+    flex: none; width: 44px; height: 44px; display: grid; place-items: center; font-size: 1.4rem;
+    background: var(--neon); border: 2px solid var(--ink); border-radius: 50%;
+  }
+  .link b { display: block; line-height: 1.4; }
+  .link small { color: var(--muted); font-weight: 500; font-size: .85rem; line-height: 1.5; display: block; margin-top: 2px; }
+
+  /* form */
+  .form-card { margin-top: 20px; max-width: 640px; border: 2px solid var(--ink); border-radius: 16px; background: #fff; padding: 26px 26px 28px; }
+  .form-card > p { margin-bottom: 18px; }
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-weight: 700; margin-bottom: 4px; }
+  .req { color: var(--error); }
+  input, textarea {
+    width: 100%; font: inherit; color: var(--ink); background: var(--paper);
+    border: 2px solid var(--ink); border-radius: 8px; padding: 10px 12px;
+  }
+  textarea { min-height: 150px; resize: vertical; }
+  input:focus, textarea:focus { background: #fff; border-color: var(--ink); box-shadow: 0 0 0 4px var(--neon); outline: none; }
+  .field-error { display: block; color: var(--error); font-size: .85rem; font-weight: 700; margin-top: 4px; }
+  .field-error:empty { display: none; }
+  button.send {
+    font: inherit; font-weight: 700; cursor: pointer; padding: 10px 28px;
+    background: var(--ink); color: var(--neon); border: 2px solid var(--ink); border-radius: 999px;
+  }
+  button.send:hover { background: var(--neon); color: var(--ink); }
+  button.send:disabled { opacity: .5; cursor: not-allowed; }
+  .ok, .ng { border: 2px solid var(--ink); border-radius: 8px; padding: 12px 16px; margin-bottom: 18px; font-weight: 700; }
+  .ok { background: var(--neon); }
+  .ng { background: #ffe3ea; color: var(--error); border-color: var(--error); }
+
+  .back { display: inline-block; margin-top: 36px; font-weight: 700; }
+
+  .notice { background: var(--neon-soft); border-top: 3px solid var(--ink); padding: 22px 20px; text-align: center; font-size: .82rem; color: var(--muted); }
+  .notice p { max-width: 780px; margin: 0 auto 6px; }
+  footer { background: var(--ink); color: var(--neon); text-align: center; padding: 22px 20px; font-size: .9rem; }
+
+  @media (max-width: 760px) {
+    .form-card { padding: 20px 18px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html">社会のふしぎノート</a>
+    <nav aria-label="メインメニュー">
+      <a href="index.html">ホーム</a>
+      <a href="blog.html">ブログ</a>
+      <a href="column.html">コラム</a>
+      <a href="about.html" aria-current="page">このサイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<div class="title">
+  <div>
+    <h1>このサイトについて</h1>
+    <p>サイトの紹介、リンク、お問い合わせフォームです。</p>
+  </div>
+</div>
+
+<main>
+  <section aria-labelledby="about-h">
+    <h2 id="about-h">社会のふしぎノートとは</h2>
+    <p class="intro">社会学を勉強している学生の、学びの記録サイトです。勉強の進み具合はブログに、マンガ・イラスト・4コマ・小さな論考はコラムに載せています。「あたりまえ」を少しだけ疑ってみる、その楽しさを残していきます。</p>
+  </section>
+
+  <section aria-labelledby="work-h">
+    <h2 id="work-h">漫画・イラスト掲載サイト</h2>
+    <div class="links">
+      <a class="link" href="https://rookie.shonenjump.com/users/14728546961183734555" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">📚</span><span><b>ジャンプルーキー</b><small>オリジナル漫画を掲載中</small></span></a>
+      <a class="link" href="https://www.pixiv.net/users/105728284" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">🎨</span><span><b>Pixiv</b><small>二次創作はこちらに掲載</small></span></a>
+    </div>
+  </section>
+
+  <section aria-labelledby="sns-h">
+    <h2 id="sns-h">SNS・その他</h2>
+    <div class="links">
+      <a class="link" href="https://bsky.app/profile/azaleaazalea88.bsky.social" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">🦋</span><span><b>Bluesky</b><small>近況・作品のお知らせ</small></span></a>
+      <a class="link" href="https://www.youtube.com/@LilyPopins0512" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">🎬</span><span><b>YouTube（リリポピ）</b><small>動画チャンネル</small></span></a>
+      <a class="link" href="https://lilipopi.github.io/lilypopins/" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">🌸</span><span><b>リリポピのホームページ</b><small>別サイト</small></span></a>
+    </div>
+  </section>
+
+  <section aria-labelledby="hp-h">
+    <h2 id="hp-h">Azalea72のホームページ</h2>
+    <div class="links">
+      <a class="link" href="https://azaleacreativeroom888.github.io/storyreviewazalea/" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">📖</span><span><b>書評サイト</b><small>本・アニメ・映画・ゲーム・小説の備忘録</small></span></a>
+      <a class="link" href="https://azaleacreativeroom888.github.io/fan-english/" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">🍔</span><span><b>英語サイト（English Site）</b><small>英語話者と英語学習者に向けたサイト</small></span></a>
+      <a class="link" href="https://azaleacreativeroom888.github.io/fan-watercolor/" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">☁️</span><span><b>水彩画サイト</b><small>水彩画掲載</small></span></a>
+    </div>
+  </section>
+
+  <section aria-labelledby="form-h">
+    <h2 id="form-h">お問い合わせフォーム</h2>
+    <div class="form-card">
+      <p>ご質問・ご感想などはこちらからどうぞ。<br>Gmailで受け取り、返信いたします。</p>
+
+      <div data-fs-success class="ok" role="status" style="display:none;">メッセージを送信しました。ありがとうございます！</div>
+      <div data-fs-error class="ng" role="alert" style="display:none;"></div>
+
+      <form id="contact-form" action="https://formspree.io/f/maqvpvoz" method="POST">
+        <div class="field">
+          <label for="name">お名前</label>
+          <input type="text" id="name" name="name" placeholder="お名前" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">メールアドレス <span class="req">*</span></label>
+          <input type="email" id="email" name="email" data-fs-field placeholder="example@email.com" autocomplete="email" required>
+          <span data-fs-error="email" class="field-error"></span>
+        </div>
+        <div class="field">
+          <label for="message">メッセージ <span class="req">*</span></label>
+          <textarea id="message" name="message" data-fs-field placeholder="メッセージを入力してください" rows="6" required></textarea>
+          <span data-fs-error="message" class="field-error"></span>
+        </div>
+        <button class="send" type="submit" data-fs-submit-btn>送信する</button>
+      </form>
+    </div>
+  </section>
+
+  <a class="back" href="index.html">← トップページに戻る</a>
+</main>
+
+<div class="notice">
+  <p>当サイトに掲載されている画像・文章・作品について、AI学習への利用、トレース（トレパク）、無断転載、二次利用を禁止します。スクリーンショットの転載・無断引用もご遠慮ください。</p>
+  <p>Please refrain from using any images, text, or works on this website for AI training, tracing, unauthorized reproduction, redistribution, or secondary use.</p>
+</div>
+<footer>&copy; 2026 社会のふしぎノート</footer>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'maqvpvoz' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+</body>
+</html>
